@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
   constructor(private userService:UserService, private _snackBar: MatSnackBar) { }
 
   public user = {
-    userName: '',
+    username: '',
     password: '',
     firstName: '',
     lastName: '',
@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {}
 
   formSubmit() {
-    if(this.user.userName=='' || this.user.userName==null, 
+    if(this.user.username=='' || this.user.username==null, 
     this.user.firstName == '' || this.user.firstName == null,
     this.user.lastName == '' || this.user.lastName == null,
     this.user.email == '' || this.user.lastName == null,
@@ -40,7 +40,7 @@ export class SignupComponent implements OnInit {
     this.userService.addUser(this.user).subscribe(
       (data:any)=>{
         //success
-        Swal.fire('Success', data.userName+' Registered', 'success');       
+        Swal.fire('Success', data.username+' Registered', 'success');       
       },
       (error)=>{
         //error
